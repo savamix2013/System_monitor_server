@@ -1,4 +1,4 @@
-from property.Metric import Metric
+from root.property.Metric import Metric
 from datetime import datetime
 
 class NetworkMetric(Metric):

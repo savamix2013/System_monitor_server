@@ -1,59 +1,52 @@
 import time
 from threading import Thread
-from inheritance.CPUMetric import CPUMetric
-from inheritance.MemoryMetric import MemoryMetric
-from inheritance.DiskMetric import DiskMetric
-from inheritance.NetworkMetric import NetworkMetric
+from root.inheritance.CPUMetric import CPUMetric
+from root.inheritance.MemoryMetric import MemoryMetric
+from root.inheritance.DiskMetric import DiskMetric
+from root.inheritance.NetworkMetric import NetworkMetric
 import random
 
 class DataCollector:
-    def __init__(self, servers, collection_interval):
+    def __init__(self, servers, interval=10):
         self.servers = servers
-        self.collection_interval = collection_interval
+        self.interval = interval
+        self.custom_intervals = {}
         self.collecting = False
         self.collected_data = []
+
+    def set_interval(self, server_type, interval):
+        self.custom_intervals[server_type] = interval
+        print(f"⏱ Інтервал для серверів типу '{server_type}' встановлено: {interval} секунд.")
 
     def start_collection(self):
         if not self.collecting:
             self.collecting = True
-            self.collected_data = []
-            print("Starting data collection...")
-            self.collection_thread = Thread(target=self.collect_data)
+            print("📊 Запуск збору метрик...")
+            self.collection_thread = Thread(target=self._collect_data_loop)
             self.collection_thread.start()
         else:
-            print("Data collection is already running.")
+            print("⚠️ Збір метрик вже виконується.")
 
     def stop_collection(self):
         if self.collecting:
             self.collecting = False
             self.collection_thread.join()
-            print("Data collection stopped.")
+            print("🛑 Збір метрик зупинено.")
         else:
-            print("Data collection is not running.")
+            print("ℹ️ Збір метрик не активний.")
 
-    def collect_data(self):
+    def _collect_data_loop(self):
         while self.collecting:
-            for server in self.servers:
-                data = self.get_server_data(server)
-                self.collected_data.append(data)
-                print(f"Collected data from {server}: {data}")
-            time.sleep(self.collection_interval)
-
-    def process_data(self):
-        if not self.collected_data:
-            print("No data to process.")
-        else:
-            print("Processing collected data...")
-            # Placeholder for data processing logic
-            for data in self.collected_data:
-                print(f"Processing data: {data}")
-            self.collected_data.clear()
-            print("Data processing complete.")
-
-    def add_server(self, server):
-        self.servers.append(server)
+            metrics = self.collect_data()
+            self.collected_data.extend(metrics)
+            print(f"✅ Зібрано {len(metrics)} метрик.")
+            time.sleep(self.interval)
 
     def collect_data(self):
+        if not self.servers:
+            print("ℹ️ Немає серверів для моніторингу.")
+            return []
+
         metrics = []
         timestamp = time.time()
 
@@ -63,12 +56,27 @@ class DataCollector:
             disk = random.randint(0, 100)
             net = random.randint(0, 2000)
 
+            # Використовуємо кастомний інтервал, якщо він встановлений
+            interval = self.custom_intervals.get(server.server_type, self.interval)
+            
             metrics.append(CPUMetric(cpu, timestamp, server.name))
             metrics.append(MemoryMetric(mem, timestamp, server.name))
             metrics.append(DiskMetric(disk, timestamp, server.name))
             metrics.append(NetworkMetric(net, timestamp, server.name))
 
-        print(f"✅ Зібрано {len(metrics)} метрик для {len(self.servers)} сервер(ів).")
         return metrics
 
+    def process_data(self):
+        if not self.collected_data:
+            print("ℹ️ Немає даних для обробки.")
+        else:
+            print("🔄 Обробка зібраних метрик...")
+            for data in self.collected_data:
+                print(f"  📌 {data}")
+            self.collected_data.clear()
+            print("✅ Обробка завершена.")
+
+    def add_server(self, server):
+        self.servers.append(server)
+        print(f"➕ Сервер {server.name} додано до моніторингу.")
 

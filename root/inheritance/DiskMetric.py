@@ -1,7 +1,7 @@
-from property.Metric import Metric
+from root.property.Metric import Metric
 from datetime import datetime
 
-class Diskmetric(Metric):
+class DiskMetric(Metric):  # Исправлено имя класса
     def __init__(self, value, disk_name, total_space):
         super().__init__("Disk", value)
         self.disk_name = disk_name

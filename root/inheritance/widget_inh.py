@@ -1,4 +1,4 @@
-from property.Widget import Widget
+from root.property.Widget import Widget
 
 cpu_widget = Widget(
     widget_type="CPU",

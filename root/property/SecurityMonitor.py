@@ -1,29 +1,28 @@
 class SecurityMonitor:
     def __init__(self):
+        # Ініціалізуємо атрибут для зберігання загроз
         self.threats = []
 
-    def analyze_logs(self, logs):
+    def analyze_logs(self, entry):
         print("Analyzing logs for security threats...")
-        for log in logs:
+        for log in entry:
             if "unauthorized access" in log:
-                self.threats_logs.append(log)
+                self.threats.append(entry)
                 print(f"Threat detected: {log}")
     
     def detect_anomalies(self, network_data):
         for entry in network_data:
             if entry.get("traffic") and entry.get("traffic") > 1000:
                 message = f" Аномальний трафік з сервера {entry.get('server')}: {entry['traffic']} пакетів"
-                self.threats_log.append(entry)
+                self.threats.append(message)
                 print(message)
 
     def notify_threats(self):
-        if not self.threats_log:
+        if not self.threats:
             print("No security threats detected.")
             return
 
         print("Security threats detected:") 
-        for threat in self.threats_log:
+        for threat in self.threats:
             print(f"- {threat}")
-        self.threats_log.clear()
-
-           
+        self.threats.clear()

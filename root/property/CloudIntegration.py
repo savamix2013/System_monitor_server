@@ -1,4 +1,4 @@
-class CloudIntergration:
+class CloudIntegration:  # Исправлено имя класса
     def __init__(self):
         self.providers = {
             "AWS": [],
@@ -19,9 +19,8 @@ class CloudIntergration:
         return dummy_servers
     
     def get_all_servers(self):
-        all_severs = []
+        all_servers = []
         for provider, servers in self.providers.items():
-            all_severs.extend(servers)
-        return all_severs
-    
-    
+            all_servers.extend(servers)
+        return all_servers
+

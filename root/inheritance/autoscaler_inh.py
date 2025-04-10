@@ -1,6 +1,6 @@
-from property.MonitoringSystem import MonitoringSystem
-from property.Server import Server
-from property.AutoScaler import AutoScaler
+from root.property.MonitoringSystem import MonitoringSystem
+from root.property.Server import Server
+from root.property.AutoScaler import AutoScaler
 
 system = MonitoringSystem()
 

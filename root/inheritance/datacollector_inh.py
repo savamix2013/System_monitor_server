@@ -1,4 +1,4 @@
-from property.DataCollector import DataCollector
+from root.property.DataCollector import DataCollector
 import time
 
 

@@ -1,7 +1,7 @@
-from inheritance import CPUMetric
-from inheritance import MemoryMetric
-from inheritance import DiskMetric
-from inheritance import NetworkMetric
+from root.inheritance.CPUMetric import CPUMetric
+from root.inheritance.MemoryMetric import MemoryMetric
+from root.inheritance.DiskMetric import DiskMetric
+from root.inheritance.NetworkMetric import NetworkMetric
 
 
 cpu_metric = CPUMetric(35, 8)

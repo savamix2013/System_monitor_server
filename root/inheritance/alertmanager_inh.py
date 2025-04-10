@@ -1,4 +1,4 @@
-from property.AlertManager import AlertManager
+from root.property.AlertManager import AlertManager
 
 rules = {
     "CPU > 80": "Critical",

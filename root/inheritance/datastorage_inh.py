@@ -1,4 +1,4 @@
-from property.DataStorage import DataStorage
+from root.property.DataStorage import DataStorage
 
 storage = DataStorage(storage_type="In-Memory", connection_settings={"host": "localhost", "port": 5432})
 

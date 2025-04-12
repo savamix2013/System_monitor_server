@@ -1,5 +1,5 @@
-from root.metric_func.CPUMetric import CPUMetric
-from root.metric_func.MemoryMetric import MemoryMetric
+from root.property.metric_func.CPUMetric import CPUMetric
+from root.property.metric_func.MemoryMetric import MemoryMetric
 
 class AutoScaler:
     def __init__(self, cpu_threshold=75, memory_threshold=75):

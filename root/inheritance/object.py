@@ -1,7 +1,7 @@
-from root.metric_func.CPUMetric import CPUMetric
-from root.metric_func.DiskMetric import DiskMetric
-from root.metric_func.MemoryMetric import MemoryMetric
-from root.metric_func.NetworkMetric import NetworkMetric
+from root.property.metric_func.CPUMetric import CPUMetric
+from root.property.metric_func.DiskMetric import DiskMetric
+from root.property.metric_func.MemoryMetric import MemoryMetric
+from root.property.metric_func.NetworkMetric import NetworkMetric
 
 cpu_metric = CPUMetric(35, 8)
 print(cpu_metric.get_value())

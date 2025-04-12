@@ -1,19 +1,17 @@
+import time
 from root.property.Server import Server
-from root.property.DataCollector import DataCollector
+from root.property.AutoScaler import AutoScaler
+from root.metric_func.CPUMetric import CPUMetric
 from root.property.DataStorage import DataStorage
 from root.property.AlertManager import AlertManager
-from root.property.AutoScaler import AutoScaler
+from root.metric_func.MemoryMetric import MemoryMetric
 from root.property.SecurityMonitor import SecurityMonitor
 from root.property.CloudIntegration import CloudIntegration
 from root.property.TicketIntegration import TicketIntegration
-from root.inheritance.CPUMetric import CPUMetric
-from root.inheritance.MemoryMetric import MemoryMetric
-import time
 
 class MonitoringSystem:
     def __init__(self):
         self.servers = []
-        self.data_collector = DataCollector([], interval=10)  # Исправлено: collection_interval вместо interval
         self.data_storage = DataStorage(storage_type="In-Memory", connection_settings={})
         self.alert_manager = AlertManager(alert_rules={
             "CPU > 80": "Critical",
@@ -127,4 +125,3 @@ class MonitoringSystem:
             time.sleep(interval_seconds)
 
         print("Real-time monitoring completed.")
-

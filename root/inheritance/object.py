@@ -1,8 +1,7 @@
-from root.inheritance.CPUMetric import CPUMetric
-from root.inheritance.MemoryMetric import MemoryMetric
-from root.inheritance.DiskMetric import DiskMetric
-from root.inheritance.NetworkMetric import NetworkMetric
-
+from root.metric_func.CPUMetric import CPUMetric
+from root.metric_func.DiskMetric import DiskMetric
+from root.metric_func.MemoryMetric import MemoryMetric
+from root.metric_func.NetworkMetric import NetworkMetric
 
 cpu_metric = CPUMetric(35, 8)
 print(cpu_metric.get_value())

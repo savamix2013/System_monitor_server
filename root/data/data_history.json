@@ -1,0 +1,226 @@
+{
+    "2025-04-12 10:36:37": [
+        {
+            "server_name": "Server-A",
+            "server_type": "web",
+            "metrics": {
+                "cpu": {
+                    "usage": 83.98018790032843,
+                    "cores": 3,
+                    "timestamp": "2025-04-12 10:36:37"
+                },
+                "memory": {
+                    "usage": 16.484947768497992,
+                    "timestamp": "2025-04-12 10:36:37"
+                },
+                "disk": {
+                    "usage": 76.04903292766863,
+                    "disk_name": "C",
+                    "total_space": 500,
+                    "timestamp": "2025-04-12 10:36:37"
+                },
+                "network": {
+                    "usage": 8.803248209382609,
+                    "interface": "eth0",
+                    "bandwidth": 1000,
+                    "timestamp": "2025-04-12 10:36:37"
+                }
+            }
+        },
+        {
+            "server_name": "Server-B",
+            "server_type": "db",
+            "metrics": {
+                "cpu": {
+                    "usage": 45.252727653455224,
+                    "cores": 6,
+                    "timestamp": "2025-04-12 10:36:37"
+                },
+                "memory": {
+                    "usage": 84.13393562654304,
+                    "timestamp": "2025-04-12 10:36:37"
+                },
+                "disk": {
+                    "usage": 6.189915203884244,
+                    "disk_name": "C",
+                    "total_space": 500,
+                    "timestamp": "2025-04-12 10:36:37"
+                },
+                "network": {
+                    "usage": 38.27536308748146,
+                    "interface": "eth0",
+                    "bandwidth": 1000,
+                    "timestamp": "2025-04-12 10:36:37"
+                }
+            }
+        }
+    ],
+    "2025-04-12 10:37:58": [
+        {
+            "server_name": "Server-A",
+            "server_type": "web",
+            "metrics": {
+                "cpu": {
+                    "usage": 85.72898745979975,
+                    "cores": 1,
+                    "timestamp": "2025-04-12 10:37:58"
+                },
+                "memory": {
+                    "usage": 58.47269298748192,
+                    "timestamp": "2025-04-12 10:37:58"
+                },
+                "disk": {
+                    "usage": 1.9187816567002636,
+                    "disk_name": "C",
+                    "total_space": 500,
+                    "timestamp": "2025-04-12 10:37:58"
+                },
+                "network": {
+                    "usage": 79.76838319338917,
+                    "interface": "eth0",
+                    "bandwidth": 1000,
+                    "timestamp": "2025-04-12 10:37:58"
+                }
+            }
+        },
+        {
+            "server_name": "Server-B",
+            "server_type": "db",
+            "metrics": {
+                "cpu": {
+                    "usage": 42.6016024156145,
+                    "cores": 6,
+                    "timestamp": "2025-04-12 10:37:58"
+                },
+                "memory": {
+                    "usage": 74.23332310508354,
+                    "timestamp": "2025-04-12 10:37:58"
+                },
+                "disk": {
+                    "usage": 12.211710267527575,
+                    "disk_name": "C",
+                    "total_space": 500,
+                    "timestamp": "2025-04-12 10:37:58"
+                },
+                "network": {
+                    "usage": 27.757106152727594,
+                    "interface": "eth0",
+                    "bandwidth": 1000,
+                    "timestamp": "2025-04-12 10:37:58"
+                }
+            }
+        }
+    ],
+    "2025-04-12 10:44:05": [
+        {
+            "server_name": "Server-A",
+            "server_type": "web",
+            "metrics": {
+                "cpu": {
+                    "usage": 20.17333055719125,
+                    "cores": 7,
+                    "timestamp": "2025-04-12 10:44:05"
+                },
+                "memory": {
+                    "usage": 21.105351281596075,
+                    "timestamp": "2025-04-12 10:44:05"
+                },
+                "disk": {
+                    "usage": 47.3300297401725,
+                    "disk_name": "C",
+                    "total_space": 500,
+                    "timestamp": "2025-04-12 10:44:05"
+                },
+                "network": {
+                    "usage": 48.72492691952289,
+                    "interface": "eth0",
+                    "bandwidth": 1000,
+                    "timestamp": "2025-04-12 10:44:05"
+                }
+            }
+        },
+        {
+            "server_name": "Server-B",
+            "server_type": "db",
+            "metrics": {
+                "cpu": {
+                    "usage": 78.15401639434508,
+                    "cores": 10,
+                    "timestamp": "2025-04-12 10:44:05"
+                },
+                "memory": {
+                    "usage": 72.12725798695267,
+                    "timestamp": "2025-04-12 10:44:05"
+                },
+                "disk": {
+                    "usage": 32.59786043136821,
+                    "disk_name": "C",
+                    "total_space": 500,
+                    "timestamp": "2025-04-12 10:44:05"
+                },
+                "network": {
+                    "usage": 48.54437638782395,
+                    "interface": "eth0",
+                    "bandwidth": 1000,
+                    "timestamp": "2025-04-12 10:44:05"
+                }
+            }
+        }
+    ],
+    "2025-04-12 11:28:39": [
+        {
+            "server_name": "Server-A",
+            "server_type": "web",
+            "metrics": {
+                "cpu": {
+                    "usage": 5.397095037076449,
+                    "cores": 7,
+                    "timestamp": "2025-04-12 11:28:39"
+                },
+                "memory": {
+                    "usage": 73.8898351277074,
+                    "timestamp": "2025-04-12 11:28:39"
+                },
+                "disk": {
+                    "usage": 14.42311643965124,
+                    "disk_name": "C",
+                    "total_space": 500,
+                    "timestamp": "2025-04-12 11:28:39"
+                },
+                "network": {
+                    "usage": 51.64711628323786,
+                    "interface": "eth0",
+                    "bandwidth": 1000,
+                    "timestamp": "2025-04-12 11:28:39"
+                }
+            }
+        },
+        {
+            "server_name": "Server-B",
+            "server_type": "db",
+            "metrics": {
+                "cpu": {
+                    "usage": 56.46929151184469,
+                    "cores": 15,
+                    "timestamp": "2025-04-12 11:28:39"
+                },
+                "memory": {
+                    "usage": 22.330144963546793,
+                    "timestamp": "2025-04-12 11:28:39"
+                },
+                "disk": {
+                    "usage": 85.30947766642163,
+                    "disk_name": "C",
+                    "total_space": 500,
+                    "timestamp": "2025-04-12 11:28:39"
+                },
+                "network": {
+                    "usage": 46.30255023607458,
+                    "interface": "eth0",
+                    "bandwidth": 1000,
+                    "timestamp": "2025-04-12 11:28:39"
+                }
+            }
+        }
+    ]
+}

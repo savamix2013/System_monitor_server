@@ -1,21 +1,21 @@
-from datetime import datetime
-
 class Alert:
-    def __init__(self, alert_type, level, severity, message, timestamp=None):
-        self.alert_type = alert_type
-        self.level = level
+    def __init__(self, severity, message, timestamp, metric_type, warning_threshold, critical_threshold, urgent_threshold, recommendation_threshold):
         self.severity = severity
         self.message = message
-        self.timestamp = timestamp or datetime.now()
+        self.timestamp = timestamp
+        self.metric_type = metric_type
+        self.warning_threshold = warning_threshold
+        self.critical_threshold = critical_threshold
+        self.urgent_threshold = urgent_threshold
+        self.recommendation_threshold = recommendation_threshold
 
-    def create_alert(self, level, message, severity="Critical", timestamp=None):
-        # Створюємо новий алерт з переданим severity
-        alert = Alert(alert_type="Автоматичне", level=level, severity=severity, message=message, timestamp=timestamp)
-        return alert  # Повертаємо створений алерт
+
+    def create_alert(self):
+        if self.metric_type == "CPU" and self.warning_threshold < 80:
+            return "Warning"
+        if self.metric_type == "Memory" and self.critical_threshold < 20:
+            return "Critical"
+        return "Unknown"
 
     def send_alert(self):
-        # Placeholder for sending alert logic (e.g., email, SMS, etc.)
-        print(f"Sending alert: {self.create_alert(self.level, self.message, self.severity, self.timestamp)}")
-
-    def send(self):
-        print(f"[{self.level}] {self.alert_type} Alert at {self.timestamp}: {self.message}")
+        print(f"Sending alert for {self.metric_type} with message: {self.message}, severity: {self.severity}")

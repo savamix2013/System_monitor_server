@@ -14,5 +14,4 @@ metrics = [
 ]
 
 manager.check_alert_conditions(metrics)
-
 manager.send_alerts()

@@ -1,6 +1,5 @@
 class SecurityMonitor:
     def __init__(self):
-        # Ініціалізуємо атрибут для зберігання загроз
         self.threats = []
 
     def analyze_logs(self, entry):

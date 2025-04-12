@@ -1,7 +1,7 @@
 from datetime import datetime
 from root.property.Alert import Alert
-from root.inheritance.CPUMetric import CPUMetric
-from root.inheritance.MemoryMetric import MemoryMetric
+from root.metric_func.CPUMetric import CPUMetric
+from root.metric_func.MemoryMetric import MemoryMetric
 
 class AlertManager:
     def __init__(self, alert_rules: dict):
@@ -31,12 +31,21 @@ class AlertManager:
         except Exception as e:
             print(f"Error evaluating rule: {e}")
             return False
+
+    def create_alert(self, message, timestamp=None, metric_type="Unknown", warning_threshold=70, critical_threshold=90, urgent_threshold=95, recommendation_threshold=50):
+        timestamp = timestamp or datetime.now() 
         
-    def create_alert(self, level, message, alert_type="Автоматичне", timestamp=None):
-        timestamp = timestamp or datetime.now()
-        alert = Alert(alert_type=alert_type, level=level, severity="Critical", message=message, timestamp=timestamp)
+        alert = Alert(severity="Critical", 
+                    message=message, 
+                    timestamp=timestamp,
+                    metric_type=metric_type,
+                    warning_threshold=warning_threshold,
+                    critical_threshold=critical_threshold,
+                    urgent_threshold=urgent_threshold,
+                    recommendation_threshold=recommendation_threshold)
+        
         self.active_alerts.append(alert)
-        print(f"Створено сповіщення: {message} (Рівень: {level})")
+        print(f"Створено сповіщення: {message}")
 
     def send_alerts(self):
         print("Відправка сповіщень:")
@@ -48,7 +57,23 @@ class AlertManager:
     def check_alert_conditions(self, metrics):
         for metric in metrics:
             if isinstance(metric, CPUMetric) and metric.value > 80:
-                self.create_alert("CPU", "Critical", f"High CPU: {metric.value}%", metric.timestamp)
+                self.create_alert(
+                    f"High CPU: {metric.value}%", 
+                    metric.timestamp,
+                    metric_type="CPU", 
+                    warning_threshold=75,
+                    critical_threshold=85,
+                    urgent_threshold=90,
+                    recommendation_threshold=70
+                )
 
             elif isinstance(metric, MemoryMetric) and metric.value < 20:
-                self.create_alert("Memory", "Warning", f"Low Memory: {metric.value}%", metric.timestamp)
+                self.create_alert(
+                    f"Low Memory: {metric.value}%", 
+                    metric.timestamp,
+                    metric_type="Memory",
+                    warning_threshold=30,
+                    critical_threshold=20,
+                    urgent_threshold=10,
+                    recommendation_threshold=40
+                )

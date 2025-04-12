@@ -1,4 +1,4 @@
-class CloudIntegration:  # Исправлено имя класса
+class CloudIntegration:
     def __init__(self):
         self.providers = {
             "AWS": [],

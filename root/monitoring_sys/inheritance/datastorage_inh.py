@@ -1,4 +1,4 @@
-from root.property.DataStorage import DataStorage
+from root.monitoring_sys.property.DataStorage import DataStorage
 
 storage = DataStorage(storage_type="In-Memory", connection_settings={"host": "localhost", "port": 5432})
 

@@ -1,7 +1,7 @@
-import matplotlib.pyplot as plt
-import seaborn as sns
 import pandas as pd
+import seaborn as sns
 from datetime import datetime
+import matplotlib.pyplot as plt
 
 class Widget:
     def __init__(self, widget_type, data_source, display_settings=None):

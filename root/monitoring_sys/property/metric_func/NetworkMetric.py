@@ -1,5 +1,5 @@
 from datetime import datetime
-from root.property.metric_func.Metric import Metric
+from root.monitoring_sys.property.metric_func.Metric import Metric
 
 class NetworkMetric(Metric):
     def __init__(self, value, interface, bandwidth, server_name=None, disk_name=None, timestamp=None):

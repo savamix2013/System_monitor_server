@@ -1,4 +1,4 @@
-from root.property.AlertManager import AlertManager
+from root.monitoring_sys.property.AlertManager import AlertManager
 
 rules = {
     "CPU > 80": "Critical",

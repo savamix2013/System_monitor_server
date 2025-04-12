@@ -1,4 +1,4 @@
-from root.property.MonitoringSystem import MonitoringSystem
+from root.monitoring_sys.property.MonitoringSystem import MonitoringSystem
 
 ms = MonitoringSystem()
 ms.discover_and_add_cloud_servers("AWS")

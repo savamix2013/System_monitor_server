@@ -1,7 +1,7 @@
 from datetime import datetime
-from root.property.Alert import Alert
-from root.property.metric_func.CPUMetric import CPUMetric
-from root.property.metric_func.MemoryMetric import MemoryMetric
+from root.monitoring_sys.property.Alert import Alert
+from root.monitoring_sys.property.metric_func.CPUMetric import CPUMetric
+from root.monitoring_sys.property.metric_func.MemoryMetric import MemoryMetric
 
 class AlertManager:
     def __init__(self, alert_rules: dict):

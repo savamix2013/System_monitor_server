@@ -1,5 +1,5 @@
-from root.property.Server import Server
-from root.property.MonitoringSystem import MonitoringSystem
+from root.monitoring_sys.property.Server import Server
+from root.monitoring_sys.property.MonitoringSystem import MonitoringSystem
 
 system = MonitoringSystem()
 
